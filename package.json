@@ -1,0 +1,63 @@
+{
+  "name": "env-uploader",
+  "displayName": "Env Uploader",
+  "description": "Extension for uploading .env files to server",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:env-uploader.envUpload",
+    "onView:envUploaderView"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "env-uploader.envUpload",
+        "title": "Upload .env File",
+        "category": "Env Uploader"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "envUploaderView",
+          "name": "Upload .env",
+          "type": "webview",
+          "when": "true",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "env-uploader.envUpload",
+          "when": "true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "start": "/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code --extensionDevelopmentPath=$(pwd)",
+    "dev": "npm start"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.103.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.34.0"
+  }
+}

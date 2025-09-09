@@ -1,0 +1,20 @@
+# Exclude environment files
+.env
+.env.*
+*.env
+**/*.env
+
+# Dev/test and misc
+.vscode/**
+.git/**
+**/*.vsix
+**/.DS_Store
+**/test/**
+
+# Node artifacts
+node_modules/**/.cache/**
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
